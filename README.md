@@ -1,2 +1,2 @@
 # Delta Logo Preloader
-A preloader made using the delta logo
+A preloader animation made using the delta logo
