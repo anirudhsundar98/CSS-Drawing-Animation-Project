@@ -1,0 +1,75 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#preloader-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+
+  overflow: hidden;
+  z-index: 100;
+}
+
+#container {
+  width: 100vmax;
+  height: 100vmax;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  transform-style: preserve-3d;
+  perspective: 50em;
+  overflow: hidden;
+}
+
+.streak-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+
+  transform: translate(-50%, -50%) translateZ(-100em);
+  animation: zoom-in linear forwards;
+  animation-duration: 0.4s;
+  animation-play-state: paused;
+
+  perspective: 20em;
+}
+
+@keyframes zoom-in {
+  0% { transform: translate(-50%, -50%) translateZ(-100em); }
+  100% { transform: translate(-50%, -50%) translateZ(50em); }
+}
+
+.streak {
+  position: absolute;
+  border-radius: 1000px;
+  transform: rotateY(90deg);
+  transform-origin: 0%;
+}
+
+/* 61% chance of appearing */
+div.thin-greenblue-streak {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, #00cba9 50%, #0045f1 50%);
+}
+
+/* 28% chance */
+div.thin-colorful-streak {
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(to right, #0045f1 30%, #d3666c 30%, #d3666c 50% #0045f1, #00cba9, #00cba9, #0045f1, #d3666c, #d3666c);
+}
+
+/* 11% */
+div.thick-redbluegreen-streak {
+  width: 70px;
+  height: 9px;
+  background: linear-gradient(to right, #d3666c, #0045f1, #00cba9);
+}
